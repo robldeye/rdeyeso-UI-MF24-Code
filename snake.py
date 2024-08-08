@@ -10,6 +10,14 @@ for i in range(1, 6):
     derivative = sp.diff(derivatives[-1], x)
     derivatives.append(derivative)
 
-# Print the derivatives
+# Print the derivatives with proper grammar
 for i, derivative in enumerate(derivatives[1:], start=1):
-    print(f"The {i} derivative of f(x) is: {derivative}")
+    ordinal = "th"
+    if i == 1:
+        ordinal = "st"
+    elif i == 2:
+        ordinal = "nd"
+    elif i == 3:
+        ordinal = "rd"
+        
+    print(f"The {i}{ordinal} derivative of f(x) is: {derivative}")
